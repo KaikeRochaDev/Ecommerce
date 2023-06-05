@@ -1,4 +1,4 @@
-:root{
+:root {
     --primary-color: #ff6b6b;
     --secondary-color: #794afa;
     --secondary-dark-color: #453c5c;
@@ -21,8 +21,8 @@
     --fw7: 700;
     --fw8: 800;
 
-    --trans-bg-color: all 300ms ease;
-    --trans-bg: background-color .3s;
+    --trans-background-color: background-color .3s, color .3s;
+    --trans-background: background-color .3s;
     --trans-color: color .3s;
 }
 
@@ -182,7 +182,7 @@ h4{
     height: auto;
     width: fit-content;
     border-radius: 2em;
-    transition: var(--trans-bg-color);
+    transition: var(--trans-background-color);
     
 }
 
@@ -450,7 +450,7 @@ form.search button:hover{
     background-color: var(--dark-color);
 }
 
-.site-off{
+.site-off {
     position: fixed;
     width: 320px;
     height: var(--percent100);
@@ -463,55 +463,54 @@ form.search button:hover{
     will-change: transform, visibility;
 }
 
-.showmenu .site-off{
+.showmenu .site-off {
     transform: translateX(0);
     visibility: visible;
     transform: transform .4s 0s, visibility 0s 0s;
 }
 
-
-.off-canvas{
+.off-canvas {
     width: var(--percent100);
     height: var(--percent100);
     touch-action: auto;
     padding: 1.5em;
 }
 
-.off-canvas .canvas-head{
+.off-canvas .canvas-head {
     color: var(--white-color);
     justify-content: space-between;
     padding: 1.5em;
-    margin: -1.5em --1.5em 1.5em;
+    margin: -1.5em -1.5em 1.5em;
     background-color: var(--secondary-color);
     border-bottom-right-radius: 160px 25px;
 }
 
-.off-canvas .canvas-head .logo{
+.off-canvas .canvas-head .logo {
     z-index: 10;
     position: relative;
 }
 
-.off-canvas .canvas-head .logo .circle{
+.off-canvas .canvas-head .logo .circle {
     opacity: .75;
 }
 
-.t-close{
+.t-close {
     font-size: 1.25em;
-    width: 37px;
+    width: 32px;
     height: 32px;
     border-radius: var(--percent50);
     background-color: var(--secondary-dark-color);
     color: var(--white-color);
-    transition: var(--trans-bg-color);
+    transition: var(--trans-background-color);
 }
 
-.t-close:hover{
+.t-close:hover {
     background-color: var(--white-color);
     color: var(--secondary-dark-color);
     opacity: .75;
 }
 
-.off-canvas .dpt-head{
+.off-canvas .dpt-head {
     font-size: var(--font-small);
     padding: 1em;
     margin-bottom: 1em;
@@ -520,7 +519,7 @@ form.search button:hover{
     border-radius: 7px 7px 0 0;
 }
 
-.off-canvas .has-child > :where(ul, .mega){
+.off-canvas .has-child> :where(ul, .mega) {
     font-size: var(--font-small);
     font-weight: var(--fw3);
     line-height: 28px;
@@ -532,11 +531,12 @@ form.search button:hover{
     transition: max-height .3s cubic-bezier(0.215, 0.610, 0.355, 1);
 }
 
-.off-canvas .expand > :where(ul, .mega){
+.off-canvas .expand> :where(ul, mega) {
     max-height: 2000px;
 }
 
-.off-canvas .thetop-nav ul, .off-canvas nav > ul {
+.off-canvas .thetop-nav ul,
+.off-canvas nav>ul {
     flex-direction: column;
     align-items: flex-start;
     font-size: var(--font-small);
@@ -546,15 +546,7 @@ form.search button:hover{
     border-top: 1px solid var(--border-color);
 }
 
-.off-canvas nav .mega{
-    padding: 0;
-}
-
-.off-canvas nav .mega .products{
-    display: none;
-}
-
-.off-canvas .has-child .icon-small{
+.off-canvas .has-child .icon-small {
     padding: 0.5em;
     line-height: initial;
 }
@@ -563,20 +555,20 @@ form.search button:hover{
     transform: rotate(90deg);
 }
 
-.off-canvas .has-child{
+.off-canvas .has-child {
     width: var(--percent100);
 }
 
-.off-canvas .thetop-nav .right > ul > :where(:nth-child(4), li:nth-child(5) > a){
+.off-canvas .thetop-nav .right>ul> :where(:nth-child(4), li:nth-child(5))>a {
     display: none;
 }
 
-.off-canvas .thetop-nav .right ul ul{
+.off-canvas .thetop-nav .right ul ul {
     display: flex;
     flex-direction: row;
 }
 
-.off-canvas .thetop-nav .right ul ul lu a{
+.off-canvas .thetop-nav .right ul ul li a {
     padding: 0.5em;
     border: 1px solid var(--border-color);
     line-height: 16px;
