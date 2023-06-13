@@ -45,3 +45,29 @@ const swiper = new Swiper(".swiper", {
     },
 
 })
+
+window.addEventListener("load", function() {
+    var mySwiper = new Swiper(".myslider", {
+      loop: true,
+      effect: "slide",
+      direction: "horizontal",
+      autoplay: {
+        delay: 4000, 
+      },
+      on: {
+        slideChange: function() {
+          var activeIndex = this.realIndex;
+          var paginationBullets = document.querySelectorAll(
+            ".swiper-pagination-bullet"
+          );
+  
+          for (var i = 0; i < paginationBullets.length; i++) {
+            paginationBullets[i].classList.remove("swiper-pagination-bullet-active");
+          }
+  
+          paginationBullets[activeIndex].classList.add("swiper-pagination-bullet-active");
+        },
+      },
+    });
+  });
+  
