@@ -1119,6 +1119,34 @@ form.search button:hover{
     background-color: var(--secondary-dark-color);
 }
 
+.search-bottom {
+    position: fixed;
+    bottom: 60px;
+    width: var(--percent100);
+    padding: 2.5em 0;
+    background-color: var(--secondary-dark-color);
+    z-index: 1000;
+    visibility: hidden;
+    opacity: 0;
+    will-change: visibility, opacity;
+}
+
+.showsearch .search-bottom {
+    visibility: inherit;
+    opacity: 1;
+}
+
+.search-bottom .t-close {
+    position: absolute;
+    top: -54px;
+    right: 0;
+}
+
+.search-bottom .t-close:hover {
+    background-color: var(--primary-color);
+}
+
+
 
 .page-home .dpt-cat .dpt-trigger, .dpt-trigger .ri-close-line, .showdpt .dpt-trigger .ri-menu-3-line{
     display: none;
@@ -1147,9 +1175,87 @@ form.search button:hover{
     color: var(--light-text-color);
 }
 
+.products.one .item{
+    flex-direction: column;
+}
+
+.products.one .price .discount{
+    font-size: 1em;
+    font-weight: var(--fw7);
+    line-height: 1;
+    position: absolute;
+    top: 0;
+    bottom: auto;
+    padding: 1em;
+    z-index: 2;
+    background-color: var(--dark-color);
+    color: var(--white-color);
+    border-radius: var(--percent50);
+    margin: 0.5em;
+}
+
+.products.one :where(.big-image, .small-image){
+    overflow: hidden;
+}
+
+.products.one .big-image{
+    position: relative;
+    margin-bottom: 1em;
+}
+
+.products.one :where(.big-image, .small-image) img{
+    object-fit: cover;
+    width: var(--percent100);
+    height: var(--percent100);
+    display: block;
+}
+
+.products.one .thumbnail-show{
+    position: relative;
+    width: 130px;
+    height: 110px;
+    overflow: hidden;
+    margin: 0 2em 2em 0;
+}
+
+.products :is(.swiper-button-next, .swiper-button-prev){
+    outline: 0;
+    color: var(--secondary-dark-color);
+    transition: var(--trans-background), transform .3s;
+}
+
+.products .big-image:hover .swiper-button-next{
+    transform: translateX(10px);
+}
+
+.products .big-image:hover .swiper-button-prev{
+    transform: translateX(-10px);
+}
+
+.products :is(.swiper-button-next, .swiper-button-prev)::after{
+    font-size: 1.5em;
+}
+
+.products .big-image:hover :is(.swiper-button-next, .swiper-button-prev){
+    background-color: var(--light-bg-color);
+}
+
+
 @media screen and (min-width: 481px){
     .products.main .item{
         flex: 0 0 50%;
+    }
+
+    .products.one .big-image{
+        margin-bottom: 2em;
+    }
+
+    .products.one .image-show{
+        height: 680px;
+    }
+
+    .products.one .thumbnail-show{
+        height: 160px;
     }
 }
 
@@ -1165,6 +1271,11 @@ form.search button:hover{
 
     .products.main .item{
         flex: 0 0 33.3333%;
+    }
+
+    .products.one .row{
+        flex: 0 0 50%;
+        width: 50%;
     }
 }
 
