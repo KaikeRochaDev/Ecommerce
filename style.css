@@ -141,7 +141,7 @@ h4{
     color: var(--light-text-color);
 }
 
-.icon-small .icon-large{
+.icon-small, .icon-large{
     display: flex;
     align-items: center;
     padding: 0 0.25em;
@@ -156,8 +156,6 @@ h4{
 .icon-large{
     font-size: 1.75em;
     padding: 0 0.75em 0 0;
-    display: flex;
-    align-items: center;
 }
 
 .mobile-hide{
@@ -185,7 +183,7 @@ h4{
     width: fit-content;
     border-radius: 2em;
     transition: var(--trans-background-color);
-    
+
 }
 
 .primary-button{
@@ -260,11 +258,11 @@ h4{
     display: none;
 }
 
-:where(.header-top .thetop-nav) .right ul ul li a{
+:where(.header-top, .thetop-nav) .right ul ul li a{
     padding: 0.25em 1em;
 }
 
-:where(.header-top .thetop-nav) .right ul ul li.current a{
+:where(.header-top, .thetop-nav) .right ul ul li.current a{
     background-color: var(--border-color);
 }
 
@@ -407,6 +405,14 @@ nav .fly-item{
     align-items: center;
 }
 
+.dpt-menu .has-child:hover ul{
+    display: block;
+}
+
+.dpt-menu .has-child li a:hover{
+    text-decoration: underline;
+}
+
 .header-main .right{
     flex: 1;
 }
@@ -445,7 +451,7 @@ form.search button{
     color: var(--white-color);
     border-radius: 0 7px 7px 0;
     cursor: pointer;
-    transition: var(--trans-bg);
+    transition: var(--trans-background);
 }
 
 form.search button:hover{
@@ -521,7 +527,7 @@ form.search button:hover{
     border-radius: 7px 7px 0 0;
 }
 
-.off-canvas .has-child> :where(ul, .mega) {
+.off-canvas .has-child > :where(ul, .mega) {
     font-size: var(--font-small);
     font-weight: var(--fw3);
     line-height: 28px;
@@ -533,12 +539,11 @@ form.search button:hover{
     transition: max-height .3s cubic-bezier(0.215, 0.610, 0.355, 1);
 }
 
-.off-canvas .expand> :where(ul, mega) {
+.off-canvas .expand > :where(ul, .mega){
     max-height: 2000px;
 }
 
-.off-canvas .thetop-nav ul,
-.off-canvas nav>ul {
+.off-canvas .thetop-nav ul, .off-canvas nav > ul{
     flex-direction: column;
     align-items: flex-start;
     font-size: var(--font-small);
@@ -546,6 +551,14 @@ form.search button:hover{
     padding-top: 1.25em;
     margin: 1.25em 0;
     border-top: 1px solid var(--border-color);
+}
+
+.off-canvas nav .mega{
+    padding: 0;
+}
+
+.off-canvas nav .mega .products{
+    display: none;
 }
 
 .off-canvas .has-child .icon-small {
@@ -561,7 +574,7 @@ form.search button:hover{
     width: var(--percent100);
 }
 
-.off-canvas .thetop-nav .right>ul> :where(:nth-child(4), li:nth-child(5))>a {
+.off-canvas .thetop-nav .right > ul > :where(:nth-child(4), li:nth-child(5)) > a{
     display: none;
 }
 
@@ -778,7 +791,7 @@ form.search button:hover{
     flex-direction: column;
 }
 
-.products:where(.big,.main, .one) .content {
+.products:where(.big, .main, .one) .content{
     gap: 1em;
     margin-top: 1.25em;
 }
@@ -792,17 +805,13 @@ form.search button:hover{
 .products .rating .stars {
     width: 80px;
     height: 20px;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' width='16' height='16'%3E%3Cpath fill='none' d='M0 0h24v24H0z'/%3E%3Cpath d='M12 18.26l-7.053 3.948 1.575-7.928L.587 8.792l8.027-.952L12 .5l3.386 7.34 8.027.952-5.935 5.488 1.575 7.928z' fill='rgba(241,196,14,1)'/%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' width='16' height='16'%3E%3Cpath d='M12.0006 18.26L4.94715 22.2082L6.52248 14.2799L0.587891 8.7918L8.61493 7.84006L12.0006 0.5L15.3862 7.84006L23.4132 8.7918L17.4787 14.2799L19.054 22.2082L12.0006 18.26Z' fill='rgba(240,187,64,1)'%3E%3C/path%3E%3C/svg%3E");
     background-position-y: top;
     background-repeat-y: no-repeat;
 }
 
 .products .item:where(:nth-child(3), :nth-child(3)) .stars{
     width: 64px;
-}
-
-.products .item:where(:nth-child(3), :nth-child(3)) .stars {
-    width: 80px;
 }
 
 .products h3 {
@@ -883,7 +892,6 @@ form.search button:hover{
     height: 160px;
     margin-right: 1.25em;
 }
-
 .products.mini-trending .content {
     margin: 0;
     gap: 0.75em;
@@ -891,17 +899,6 @@ form.search button:hover{
 
 .products:where(.mini-trending, .main) h3 {
     font-weight: 400;
-}
-
-.products.main .item {
-    flex-direction: column;
-    flex: 0 0 100%;
-    padding: 0 1.4em;
-    padding-bottom: 2em;
-}
-
-.products.main .media {
-    height: 390px;
 }
 
 .products.main .item{
@@ -922,7 +919,7 @@ form.search button:hover{
     padding: 0 1em 1em;
     border-radius: 7px;
     z-index: 1;
-    background: linear-gradient(0deg, var(--light-bg-color) 0%, var(--white-color) 70%);
+    background: linear-gradient(0deg, var(--light-bg-color) 0%,var(--white-color) 70%);
     opacity: 0;
     visibility: hidden;
     will-change: opacity;
@@ -1014,6 +1011,7 @@ form.search button:hover{
     padding: 2.5em 0;
     background-color: var(--dark-color);
     color: var(--white-color);
+    margin-top: 1em;
 }
 
 .newsletter h3{
@@ -1021,8 +1019,9 @@ form.search button:hover{
 }
 
 .newsletter p{
-    font-weight: var(--border-color);
-    margin: 0.5em 1.5em;
+    font-weight: var(--fw3);
+    color: var(--border-color);
+    margin: 0.5em 0 1.5em;
 }
 
 .newsletter p strong{
@@ -1147,8 +1146,9 @@ form.search button:hover{
 }
 
 
-
-.page-home .dpt-cat .dpt-trigger, .dpt-trigger .ri-close-line, .showdpt .dpt-trigger .ri-menu-3-line{
+.page-home .dpt-cat .dpt-trigger,
+.dpt-trigger .ri-close-line,
+.showdpt .dpt-trigger .ri-menu-3-line{
     display: none;
 }
 
@@ -1284,15 +1284,15 @@ form.search button:hover{
     z-index: 1;
 }
 
-.products .variant input{
-    clip: rect(0, 0, 0, 0);
+:where(.products .variant, .filter-block:not(.pricing)) input{
+    clip: rect(0,0,0,0);
     overflow: hidden;
     position: absolute;
     height: 0;
     width: 0;
 }
 
-.products .variant label::before{
+.products .colors .variant label::before{
     opacity: 1;
 }
 
@@ -1392,6 +1392,8 @@ form.search button:hover{
     text-transform: uppercase;
     padding: 1em 1.25em;
     border-top: 1px solid var(--border-color);
+    gap: 1em;
+    align-items: flex-start;
 }
 
 .products .collapse .has-child > a::before{
@@ -1458,19 +1460,22 @@ form.search button:hover{
 }
 
 
+
 @media screen and (min-width: 768px){
     .products .price .current{
         font-size: 1.25em;
     }
 
-    .products.mini, .banner .row, .widgets .row{
+    .products.mini,
+    .banner .row,
+    .widgets .row,
+    .checkout .item{
         flex: 0 0 50%;
     }
 
     .products.main .item{
         flex: 0 0 33.3333%;
     }
-
     .products.one .row{
         flex: 0 0 50%;
         width: 50%;
@@ -1481,6 +1486,7 @@ form.search button:hover{
     .container{
         padding: 0 2em;
     }
+
     .desktop-hide{
         display: none;
     }
@@ -1517,11 +1523,9 @@ form.search button:hover{
         z-index: 100;
 
         display: none;
-        transition: all 300ms ease;
     }
 
     nav li.has-child:hover .mega{
-        transition: all 300ms ease;
         display: block;
     }
 
@@ -1657,7 +1661,7 @@ form.search button:hover{
         left: 0;
         right: 0;
         bottom: 0;
-        background: linear-gradient(90deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0));
+        background: linear-gradient(90deg, rgba(225, 255, 255, 1) 0%, rgba(255, 255, 255, 0));
     }
 
     .dpt-menu .mega{
@@ -1674,16 +1678,18 @@ form.search button:hover{
         margin-left: auto;
     }
 
-    .trending .products, .product-categories .row{
+    .trending .products,
+    .product-categories .row {
         flex: 0 0 33.3333%;
     }
-    
 
-    .products .big .media{
+
+    .products.big .media {
         max-height: 373px;
     }
 
-    .products.main .item, .widgets .row{
+    .products.main .item,
+    .widgets .row {
         flex: 0 0 25%;
     }
 
