@@ -1601,6 +1601,199 @@ form label{
     margin-top: auto;
 }
 
+
+.filter-block{
+    margin-bottom: 1em;
+    padding-bottom: 1em;
+}
+
+.filter-block:not(:last-child){
+    border-bottom: 1px solid var(--border-color);
+}
+
+.filter-block h4{
+    font-size: 1.25em;
+    margin-bottom: 0.5em;
+}
+
+.filter-block li{
+    display: flex;
+    font-size: 0.9em;
+    position: relative;
+    line-height: 2;
+}
+
+.filter-block label .checked{
+    width: 16px;
+    height: 16px;
+    position: relative;
+    line-height: 0;
+    display: inline-block;
+    border: 2px solid var(--secondary-dark-color);
+    vertical-align: text-top;
+    margin: 0 7px 0 0;
+    cursor: pointer;
+}
+
+.filter-block label .checked::before{
+    content: "";
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background-color: var(--secondary-dark-color);
+    top: 3px;
+    left: 3px;
+    opacity: 0;
+}
+
+.filter-block input:checked + label .checked::before{
+    opacity: 1;
+}
+
+.filter-block li .count{
+    margin-left: auto;
+    color: var(--light-text-color);
+}
+
+.bycolor label[for="coblue"]::before{
+    background-color: blue;
+}
+
+.bycolor label[for="coyellow"]::before{
+    background-color: yellow;
+}
+
+.bycolor label[for="cored"]::before{
+    background-color: rgb(255, 0, 0);
+}
+
+.bycolor input:checked + label{
+    background-color: transparent;
+    border: 2px solid var(--dark-color);
+}
+
+input[type="range"]{
+    -webkit-appearance: none;
+    width: var(--percent100);
+}
+
+input[type="range"]:focus{
+    outline: 0;
+}
+
+input[type="range"]::-webkit-slider-runnable-track{
+    width: var(--percent100);
+    height: 5px;
+    cursor: pointer;
+    background-color: var(--border-color);
+    box-shadow: none;
+    border: 0;
+}
+
+input[type="range"]::-webkit-slider-thumb{
+    z-index: 2;
+    position: relative;
+    height: 18px;
+    width: 14px;
+    background-color: var(--primary-color);
+    -webkit-appearance: none;
+    margin-top: -7px;
+}
+
+.single-category .holder {
+    display: flex;
+    flex-direction: column;
+}
+
+.single-category .side-bar,
+.single-category .section {
+    flex:1 0 100%;
+}
+
+.page-title {
+    margin-bottom: 3em;
+}
+
+.cat-description p {
+    font-weight: var(--fw3);
+    font-size: 0.9em;
+}
+
+.cat-navigation {
+    font-size: 0.85em;
+    margin: 2em 0;
+    justify-content: flex-end;
+    gap: 1em;
+}
+.cat-navigation .item-filter {
+    margin-right: auto;
+}
+
+.cat-navigation > div {
+    position: relative;
+}
+
+.cat-navigation .item-filter a {
+    align-items: center;
+    text-transform: uppercase;
+}
+
+.cat-navigation ul {
+    display: none;
+    position: absolute;
+    left: 0;
+    min-width: var(--percent100);
+    width: max-content;
+    z-index: 10;
+}
+
+.cat-navigation .label, .cat-navigation ul li {
+    display: flex;
+    gap: 0.5;
+    padding: 0.5em 1em;
+    transition: var(--trans-color);
+}
+
+:where(.item-sortir, .item-options) .label,
+.cat-navigation ul {
+    color: var(--light-text-color);
+    background-color: var(--light-bg-color);
+    cursor: pointer;
+}
+
+.cat-navigation :where(label, ul li):hover {
+    color: var(--dark-color);
+}
+
+:where(.item-sortir, .item-options):hover ul {
+    display: block;
+}
+
+.load-more {
+    margin: 2em 0 4em;
+}
+
+.filter {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    padding: 2em;
+    max-width: 400px;
+    width: 90%;
+    background-color: var(--white-color);
+    overflow: auto;
+    z-index: 1000;
+    box-shadow: rgba(0 0 0 / 30%) 0 10px 50px;
+    visibility: hidden;
+    opacity: 0;
+}
+
+.filter.show {
+    visibility: visible;
+    opacity: 1;
+}
+
 @media screen and (min-width: 481px){
     .products.main .item{
         flex: 0 0 50%;
@@ -1874,5 +2067,28 @@ form label{
 
     .products.one .flexwrap > .row:last-child > .item{
         padding-left: 2em;
+    }
+
+    .single-category .holder{
+        flex-direction: row;
+    }
+
+    .single-category .sidebar{
+        flex: 1 0 25%;
+    }
+
+    .single-category .section{
+        flex: 1 0 75%;
+    }
+
+    .single-category .sidebar .filter{
+        position: sticky;
+        top: 2em;
+        box-shadow: none;
+        width: var(--percent100);
+        z-index: initial;
+        visibility: visible;
+        opacity: 1;
+        padding: 0 1.5em 0 0;
     }
 }
