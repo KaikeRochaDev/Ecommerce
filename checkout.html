@@ -476,209 +476,167 @@
         </header>
 
         <main>
-            <div class="single-cart">
+            <div class="single-checkout">
                 <div class="container">
                     <div class="wrapper">
-                        <div class="breadcrumb">
-                            <ul class="flexitem">
-                                <li><a href="">Início</a></li>
-                                <li>Carrinho</li>
-                            </ul>
-                        </div>
-                        <div class="page-title">
-                            <h1>Carrinho de compras</h1>
-                        </div>
-                        <div class="products one cart">
-                            <div class="flexwrap">
-                                <form action="" class="form-cart">
-                                    <div class="item">
-                                        <table id="cart-table">
-                                            <thead>
-                                                <tr>
-                                                    <th>Item</th>
-                                                    <th>Preço</th>
-                                                    <th>Quantidade</th>
-                                                    <th>Subtotal</th>
-                                                    <th></th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <td class="flexitem">
-                                                        <div class="thumbnail object-cover">
-                                                            <a href=""><img src="assets/products/home4.jpg" alt=""></a>
-                                                        </div>
-                                                        <div class="content">
-                                                            <strong><a href="">Sofá de veludo Vonanda</a></strong>
-                                                        </div>
-                                                    </td>
-                                                    <td>R$650,00</td>
-                                                    <td>
-                                                        <div class="qty-control flexitem">
-                                                            <button class="minus"></button>
-                                                            <input type="text" value="1" min="1">
-                                                            <button class="plus"></button>
-                                                        </div>
-                                                    </td>
-                                                    <td>R$650,00</td>
-                                                    <td><a href="" class="item-remove"><i class="ri-close-line"></i></a></td>
-                                                </tr>
+                        <div class="checkout flexwrap">
+                            <div class="item left styled">
+                                <h1>Endereço de envio</h1>
+                                <form action="">
+                                    <p>
+                                        <label for="email">Email <span></span></label>
+                                        <input type="email" name="email" id="email" autocomplete="off" required>
+                                    </p>
+                                    <p>
+                                        <label for="fname">Nome <span></span></label>
+                                        <input type="text" id="fname" required>
+                                    </p>
 
-                                                <tr>
-                                                    <td class="flexitem">
-                                                        <div class="thumbnail object-cover">
-                                                            <a href=""><img src="assets/products/home5.jpg" alt=""></a>
-                                                        </div>
-                                                        <div class="content">
-                                                            <strong><a href="">Cama incrível para um casal</a></strong>
-                                                            <p>Tamanho: Casal</p>
-                                                        </div>
-                                                    </td>
-                                                    <td>R$850,00</td>
-                                                    <td>
-                                                        <div class="qty-control flexitem">
-                                                            <button class="minus"></button>
-                                                            <input type="text" value="1" min="1">
-                                                            <button class="plus"></button>
-                                                        </div>
-                                                    </td>
-                                                    <td>R$850,00</td>
-                                                    <td><a href="" class="item-remove"><i class="ri-close-line"></i></a></td>
-                                                </tr>
+                                    <p>
+                                        <label for="lname">Sobrenome <span></span></label>
+                                        <input type="text" id="lname" required>
+                                    </p>
 
-                                                <tr>
-                                                    <td class="flexitem">
-                                                        <div class="thumbnail object-cover">
-                                                            <a href=""><img src="assets/products/home2.jpg" alt=""></a>
-                                                        </div>
-                                                        <div class="content">
-                                                            <strong><a href="">Teto ajustável moderno</a></strong>
-                                                            <p>Cor: Cinza</p>
-                                                        </div>
-                                                    </td>
-                                                    <td>R$600,00</td>
-                                                    <td>
-                                                        <div class="qty-control flexitem">
-                                                            <button class="minus"></button>
-                                                            <input type="text" value="1" min="1">
-                                                            <button class="plus"></button>
-                                                        </div>
-                                                    </td>
-                                                    <td>R$1.200,00</td>
-                                                    <td><a href="" class="item-remove"><i class="ri-close-line"></i></a></td>
-                                                </tr>
+                                    <p>
+                                        <label for="cname">Nome da empresa</label>
+                                        <input type="text" id="cname">
+                                    </p>
 
-                                                <tr>
-                                                    <td class="flexitem">
-                                                        <div class="thumbnail object-cover">
-                                                            <a href=""><img src="assets/products/home3.jpg" alt=""></a>
-                                                        </div>
-                                                        <div class="content">
-                                                            <strong><a href="">Armário de armazenamento moderno com porta e 3 Gavetas</a></strong>
-                                                            <p>Tipo: Madeira</p>
-                                                        </div>
-                                                    </td>
-                                                    <td>R$800,00</td>
-                                                    <td>
-                                                        <div class="qty-control flexitem">
-                                                            <button class="minus"></button>
-                                                            <input type="text" value="1" min="1">
-                                                            <button class="plus"></button>
-                                                        </div>
-                                                    </td>
-                                                    <td>R$800,00</td>
-                                                    <td><a href="" class="item-remove"><i class="ri-close-line"></i></a></td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
+                                    <p>
+                                        <label for="adress">Endereço da rua <span></span></label>
+                                        <input type="text" id="adress" required>
+                                    </p>
+
+                                    <p>
+                                        <label for="city">Cidade <span></span></label>
+                                        <input type="text" id="city" required>
+                                    </p>
+
+                                    <p>
+                                        <label for="state">Estado <span></span></label>
+                                        <input type="text" id="state" required>
+                                    </p>
+
+                                    <p>
+                                        <label for="postal">CEP <span></span></label>
+                                        <input type="number" id="postal" required>
+                                    </p>
+
+                                    <p>
+                                        <label for="country">País</label>
+                                        <select name="country" id="country">
+                                            <option value=""></option>
+                                            <option value="1" selected="selected">Brasil</option>
+                                            <option value="2">Estados Unidos</option>
+                                            <option value="3">Argentina</option>
+                                            <option value="4">Espanha</option>
+                                            <option value="5">Outros</option>
+                                        </select>
+                                    </p>
+
+                                    <p>
+                                        <label for="phone">Telefone <span></span></label>
+                                        <input type="number" id="phone" required>
+                                    </p>
+
+                                    <p>
+                                        <label for="">Notas de pedidos (opcional)</label>
+                                        <textarea cols="30" rows="10"></textarea>
+                                    </p>
+
+                                    <p class="checkset">
+                                        <input type="checkbox" id="anaccount">
+                                        <label for="anaccount">Crie a sua conta</label>
+                                    </p>
+
                                 </form>
-                                <div class="cart-summary styled">
-                                    <div class="item">
-                                        <div class="coupon">
-                                            <input type="text" placeholder="Insira o cupom">
-                                            <button>Aplicar</button>
-                                        </div>
-                                        <div class="shipping-rate collapse">
-                                            <div class="has-child expand">
-                                                <a href="" class="icon-small">Estimativa de envio e impostos</a>
-                                                <div class="content">
-                                                    <div class="countries">
-                                                        <form action="">
-                                                            <label for="country">País</label>
-                                                            <select name="country" id="country">
-                                                                <option value=""></option>
-                                                                <option value="1" selected="selected">Brasil</option>
-                                                                <option value="2">Estados Unidos</option>
-                                                                <option value="3">Argentina</option>
-                                                                <option value="4">Espanha</option>
-                                                                <option value="5">Outros</option>
-                                                            </select>
-                                                        </form>
-                                                    </div>
 
-                                                    <div class="states">
-                                                        <form action="">
-                                                            <label for="state">Estado</label>
-                                                            <select name="state" id="state">
-                                                                <option value="">Selecione o estado</option>
-                                                                <option value="1" selected="selected">São Paulo</option>
-                                                                <option value="2">Rio de Janeiro</option>
-                                                                <option value="3">Bahia</option>
-                                                                <option value="4">Minas Gerais</option>
-                                                                <option value="5">Outros</option>
-                                                            </select>
-                                                        </form>
-                                                    </div>
+                                <div class="shipping-methods">
+                                    <h2>Métodos de envio</h2>
+                                    <p class="checkset">
+                                        <input type="radio" checked>
+                                        <label>Taxa do frete: R$14</label>
+                                    </p>
+                                </div>
 
-                                                    <div class="postal-code">
-                                                        <form action="">
-                                                            <label for="postal">CEP:</label>
-                                                            <input type="number" name="postal" id="postal"/>
-                                                        </form>
-                                                    </div>
+                                <div class="primary-checkout">
+                                    <button class="primary-button">Faça a encomenda</button>
+                                </div>
+                            </div>
+                            <div class="item right">
+                                <h2>Resumo do pedido</h2>
+                                <div class="summary-order is_sticky">
+                                    <div class="summary-totals">
+                                        <ul>
+                                            <li>
+                                                <span>Subtotal</span>
+                                                <span>R$3.500,00</span>
+                                            </li>
 
-                                                    <div class="rate-options variant">
-                                                        <form action="">
-                                                            <p>
-                                                                <span>Frete: R$14,00</span>
-                                                                <input type="radio" name="rate-option" id="flat" checked>
-                                                                <label for="flat" class="circle"></label>
-                                                            </p>
-                                                            <p>
-                                                                <span>Melhor: R$00,00</span>
-                                                                <input type="radio" name="rate-option" id="best" checked>
-                                                                <label for="best" class="circle"></label>
-                                                            </p>
-                                                        </form>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="cart-total">
-                                            <table>
-                                                <tbody>
-                                                    <tr>
-                                                        <th>Subtotal</th>
-                                                        <th>R$3.500,00</th>
-                                                    </tr>
-                                                    <tr>
-                                                        <th>Desconto</th>
-                                                        <th>R$300,00</th>
-                                                    </tr>
-                                                    <tr>
-                                                        <th>Envio <span class="mini-text">(Frete)</span></th>
-                                                        <th>R$14,00</th>
-                                                    </tr>
-                                                    <tr class="grand-total">
-                                                        <th>Total</th>
-                                                        <th>R$3.214,00</th>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                            <a href="/checkout.html" class="secondary-button">Conferir</a>
-                                        </div>
+                                            <li>
+                                                <span>Desconto</span>
+                                                <span>R$300,00</span>
+                                            </li>
+
+                                            <li>
+                                                <span>Total</span>
+                                                <strong>R$3.214,00</strong>
+                                            </li>
+                                        </ul>
                                     </div>
+                                    <ul class="products mini">
+                                        <li class="item">
+                                            <div class="thumbnail object-cover">
+                                                <img src="assets/products/home4.jpg" alt="">
+                                            </div>
+                                            <div class="item-content">
+                                                <p>Sofá de veludo Vonanda</p>
+                                                <span class="price">
+                                                    <span>R$650,00</span>
+                                                    <span>x 1</span>
+                                                </span>
+                                            </div>
+                                        </li>
+
+                                        <li class="item">
+                                            <div class="thumbnail object-cover">
+                                                <img src="assets/products/home5.jpg" alt="">
+                                            </div>
+                                            <div class="item-content">
+                                                <p>Cama incrível para um casal</p>
+                                                <span class="price">
+                                                    <span>R$850,00</span>
+                                                    <span>x 1</span>
+                                                </span>
+                                            </div>
+                                        </li>
+
+                                        <li class="item">
+                                            <div class="thumbnail object-cover">
+                                                <img src="assets/products/home2.jpg" alt="">
+                                            </div>
+                                            <div class="item-content">
+                                                <p>Teto ajustável moderno</p>
+                                                <span class="price">
+                                                    <span>R$1.200,00</span>
+                                                    <span>x 2</span>
+                                                </span>
+                                            </div>
+                                        </li>
+
+                                        <li class="item">
+                                            <div class="thumbnail object-cover">
+                                                <img src="assets/products/home3.jpg" alt="">
+                                            </div>
+                                            <div class="item-content">
+                                                <p>Armário de armazenamento moderno com porta e 3 Gavetas</p>
+                                                <span class="price">
+                                                    <span>R$800,00</span>
+                                                    <span>x 1</span>
+                                                </span>
+                                            </div>
+                                        </li>
+                                    </ul>
                                 </div>
                             </div>
                         </div>
